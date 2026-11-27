@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## SkillSphere architecture
+- Keep the existing TanStack Start framework and Lovable Cloud for authentication and PostgreSQL persistence; Django cannot run in the managed app runtime.
+- Store profile details separately from protected account roles; only the signup trigger can assign an allowlisted community role and administrator grants require privileged administration.
+- Use authenticated server functions and owner-scoped policies for private profile reads and updates; route gates alone are not a data security boundary.
+- Keep one root auth subscriber for session-aware navigation and cache invalidation; clear private queries before signing out.
+- Keep programme previews explicitly separate from live listings until the opportunities phase supplies persistent, verified records.
